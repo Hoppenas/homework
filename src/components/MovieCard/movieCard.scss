@@ -1,0 +1,14 @@
+@import "../../styles/index";
+
+.movies-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 144rem;
+  min-width: 13rem;
+
+  .movie-card {
+    width: 22.5rem;
+  }
+}

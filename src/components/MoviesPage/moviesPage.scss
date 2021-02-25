@@ -1,0 +1,47 @@
+@import "../../styles/index";
+
+.header {
+  background-image: linear-gradient(to right, get-color(neutral, 1), #e93a1b);
+  height: 4rem;
+  width: 100%;
+
+  .header-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+
+    .input {
+      display: flex;
+      flex-direction: column;
+      font-weight: 900;
+      margin: 1rem 0.2rem auto 0;
+      position: relative;
+      width: 80%;
+
+      .input-logo {
+        fill: get-color(neutral, 8);
+        height: 2rem;
+        left: 0.7rem;
+        margin: auto 0;
+        position: absolute;
+      }
+
+      .input-field {
+        background-color: rgba(255, 255, 255, 0.3);
+        border: none;
+        color: get-color(neutral, 8);
+        padding: 0 0 0 2.4rem;
+        height: 2rem;
+      }
+
+      .input-field::placeholder {
+        color: get-color(neutral, 8);
+      }
+
+      .input-field:focus {
+        outline: none;
+      }
+    }
+  }
+}

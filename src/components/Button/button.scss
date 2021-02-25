@@ -1,0 +1,18 @@
+@import "../../styles/index";
+
+.button {
+  background-color: get-color(neutral, 8);
+  border: none;
+  color: #ff690f;
+  height: 2rem;
+  margin: auto 0;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: get-color(neutral, 2);
+  }
+}

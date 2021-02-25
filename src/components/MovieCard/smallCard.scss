@@ -1,0 +1,58 @@
+@import "../../styles/index";
+
+.small-card {
+  background-color: get-color(neutral, 0);
+  margin: 0.2rem;
+  padding: 0.5rem;
+  width: 29rem;
+
+  .movie-info {
+    color: get-color(neutral, 8);
+    padding: 0 1rem 1rem 1rem;
+
+    .movie-summary {
+      color: get-color(neutral, 7);
+    }
+
+    .movie-summary-text {
+      max-height: 110px;
+      overflow-y: auto;
+      text-align: justify;
+    }
+
+    .movie-summary-text::-webkit-scrollbar {
+      background-color: get-color(neutral, 0);
+      width: 0.2rem;
+    }
+
+    .movie-summary-text::-webkit-scrollbar-thumb {
+      background-color: get-color(neutral, 0);
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px get-color(neutral, 7);
+    }
+
+    .movie-button {
+      background: none;
+      border: 1px solid;
+      bottom: 0;
+      color: get-color(neutral, 1);
+      padding: 0.4rem;
+      text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .poster {
+    border-radius: 0.4rem;
+    width: 100%;
+  }
+
+  .movie-name {
+    color: get-color(neutral, 7);
+    font-size: 2rem;
+    margin-block-end: 0;
+  }
+}

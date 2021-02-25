@@ -1,0 +1,32 @@
+@import "../../styles/index";
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20.75rem;
+
+  div {
+    width: 20px;
+    height: 20px;
+    background: get-color(neutral, 6);
+    border-radius: 50%;
+    margin: 3px;
+    animation: loader 0.6s infinite alternate;
+  }
+
+  div:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  div:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  @keyframes loader {
+    to {
+      opacity: 0.1;
+      transform: translate(0, -20px);
+      background: get-color(neutral, 9);
+    }
+  }
+}

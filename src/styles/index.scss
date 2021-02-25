@@ -1,0 +1,29 @@
+$black: #000;
+$pumpkin: #ff690f;
+$white: #fff;
+$nevada: #65686a;
+$shades: #000000;
+$tuft-bush: #ffd9c6;
+$oxford-blue: #344856;
+$manatee: #8385aa;
+$westar: #e5e3df;
+$pomegranate: #e93a1b;
+
+$colors: (
+  neutral: (
+    0: $black,
+    1: $pumpkin,
+    2: $nevada,
+    3: $shades,
+    4: $tuft-bush,
+    5: $oxford-blue,
+    6: $manatee,
+    7: $westar,
+    8: $white,
+    9: $pomegranate,
+  ),
+);
+
+@function get-color($color, $meaning: "base") {
+  @return map-get(map-get($colors, $color), $meaning);
+}
