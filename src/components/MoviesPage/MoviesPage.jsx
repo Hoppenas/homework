@@ -9,14 +9,13 @@ import api_key from '../../utils/APIkey';
 
 function MoviePage() {
     const [movie, setMovie] = useState("");
-    const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [movieList, setMovieList] = useState([])
     const [showDropDownList, setShowDropDownList] = useState(false);
     const [movieCardsList, setMovieCardsList] = useState([])
 
     const handleChange = (event) => {
-        setIsLoading(false);
+        setIsLoading(true);
         if (event.target.value.length>=3) {
             setMovie(event.target.value)
         }
@@ -34,21 +33,21 @@ function MoviePage() {
               .then(
                 (result) => {
                     setMovieList(result.results);
-                    setIsLoading(true);
-                    setShowDropDownList(true);
+                    setIsLoading(false);
+                    if (isLoading) {setShowDropDownList(true)};
                     setMovie("");
                 },
               )
               .catch(
                   (error) => {
-                      setIsLoading(true);
+                      setIsLoading(false);
                       console.log(error);
                   }
               )
         }
     }, [movie])
 
-    const SearchMovie = () => {
+    const searchMovie = () => {
         setShowDropDownList(false);
         setMovieCardsList(movieList);
     };
@@ -73,9 +72,10 @@ function MoviePage() {
                         setShowDropDownList={setShowDropDownList} 
                         isLoading={isLoading} 
                         setMovieCardsList={setMovieCardsList}
+                        setMovie={setMovie}
                     />
                 </div>
-                <Button click={SearchMovie} />
+                <Button click={searchMovie} />
             </div>
         </div>     
         <MovieCard  

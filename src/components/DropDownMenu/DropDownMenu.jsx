@@ -10,28 +10,28 @@ function DropDownMenu(props) {
         setShowDropDownList, 
         isLoading,
         setMovieCardsList,
+        setMovie,
     } = props
 
-    const ChooseMovie = (elements, index) => {
-        document.querySelector(".input-field").value = elements.original_title;
-        let arr = [];
-        arr.push(elements);
-        setMovieCardsList(arr);
+    const selectMovie = (movie) => {
+        setMovieCardsList([movie]);
         setShowDropDownList(false);
+        document.querySelector(".input-field").value = movie.original_title;
+        setMovie(movie.original_title);
     }
 
-    if (isLoading && showDropDownList && movieList.length>0) {
+    if (!isLoading && showDropDownList && movieList.length>0) {
         return(
             <div className="movie-field">
-                {movieList.slice(0, 8).map((elements, index) => (
-                    <button className="movie-wrapper" key={index} tabIndex={0} onClick={() => ChooseMovie(elements, index)}>
-                        <b className="movie-name">{elements.original_title}</b>
-                        <b className="movie-info">{elements.vote_average} Rating, {elements.release_date.substring(0, 4)}</b>
+                {movieList.slice(0, 8).map((movie, index) => (
+                    <button className="movie-wrapper" key={index} tabIndex={0} onClick={() => selectMovie(movie, index)}>
+                        <b className="movie-name">{movie.original_title}</b>
+                        <b className="movie-info">{movie.vote_average || '(no data)'} Rating, {movie.release_date ? movie.release_date.substring(0, 4) : '(no data)'}</b>
                     </button>
                 ))}
             </div>
         )
-    } else if (!isLoading && showDropDownList) {
+    } else if (isLoading && showDropDownList) {
         return(
             <div className="movie-field">
                 <div className="movie-wrapper">
@@ -51,6 +51,7 @@ DropDownMenu.propTypes = {
     setShowDropDownList: PropTypes.func,
     isLoading: PropTypes.bool,
     setMovieCardsList: PropTypes.func,
+    setMovie: PropTypes.func,
   };
 
 export default DropDownMenu;
