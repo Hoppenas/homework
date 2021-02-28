@@ -21,7 +21,7 @@ function SmallCard (props) {
                 <p className="movie-summary-text"> {element.overview}</p>
                 <a 
                 className="movie-button"
-                href={`https://www.youtube.com/results?search_query=${element.original_title.split(' ').join('+')}`}
+                href={`https://www.youtube.com/results?search_query=${element.original_title.split(' ').join('+')}+trailer`}
                 >
                     WATCH TRAILER
                 </a>
