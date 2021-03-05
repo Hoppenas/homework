@@ -58,6 +58,8 @@ function MoviePage() {
             <div className="header-wrapper">
                 <div className="input">
                     <Movie className="input-logo"/>
+                    <label htmlFor="Search">
+                    </label>
                     <input
                         type="text"
                         className="input-field"
