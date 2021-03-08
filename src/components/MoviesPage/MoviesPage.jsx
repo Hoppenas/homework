@@ -18,6 +18,8 @@ function MoviePage() {
         setIsLoading(true);
         if (event.target.value.length>=3) {
             setMovie(event.target.value)
+        } else {
+            setShowDropDownList(false)
         }
     };
     
